@@ -247,6 +247,55 @@ body {
   margin-top: var(--spacing-xs);
 }
 
+/* ─── Upload Button ──────────────────────────────────────────── */
+.upload-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  color: var(--clr-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast), transform var(--transition-fast);
+  user-select: none;
+}
+
+.upload-label:hover {
+  background: rgba(124, 92, 252, 0.2);
+  color: var(--clr-text-primary);
+  border-color: var(--clr-accent-1);
+  transform: translateY(-1px);
+}
+
+.upload-label:focus-within {
+  outline: 2px solid var(--clr-accent-1);
+  outline-offset: 2px;
+}
+
+/* Flash animation on successful upload */
+@keyframes avatar-swap {
+  0%   { opacity: 0.4; transform: scale(0.92); }
+  100% { opacity: 1;   transform: scale(1); }
+}
+.avatar-img.swapped {
+  animation: avatar-swap 0.35s ease both;
+}
 
 
 /* ─── Right Column ───────────────────────────────────────────── */
