@@ -17,6 +17,7 @@ Open `index.html` directly in your browser — no build step or server required.
 - **Live Epoch Time** — `Date.now()` displayed in milliseconds, refreshed every 500 ms via `setInterval`
 - **Responsive Layout** — stacks vertically on mobile; avatar left / content right on wider screens (CSS Flexbox + Grid)
 - **Premium Dark Design** — glassmorphism card, animated gradient backgrounds, micro-animations, Inter font
+- **Avatar Upload** — Change profile photo instantly using `FileReader` with a smooth scale-in animation
 - **Social Links** — open in a new tab with `target="_blank" rel="noopener noreferrer"`
 
 ---
@@ -25,9 +26,9 @@ Open `index.html` directly in your browser — no build step or server required.
 
 ```
 profile-card/
-├── index.html   # Markup — all data-testid attributes live here
-├── style.css    # Premium dark-mode design system
-├── script.js    # Live epoch time ticker
+├── index.html   # Markup — all data-testid attributes + upload control
+├── style.css    # Premium dark-mode design system & upload animations
+├── script.js    # Live epoch time ticker & avatar upload handler
 └── avatar.jpg   # Profile photo
 ```
 
@@ -61,6 +62,7 @@ profile-card/
 - [x] Color contrast meets WCAG AA (text on dark background ≥ 4.5:1)
 - [x] Sections labelled via `aria-labelledby`
 - [x] Social links have descriptive `aria-label` (including "opens in new tab")
+- [x] Avatar upload accessible via keyboard (custom styled label + hidden input)
 
 ---
 
